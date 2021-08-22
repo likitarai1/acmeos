@@ -13,6 +13,9 @@ const session = require('express-session');
 
 const PORT = process.env.PORT || 9000;
 
+const db = require('./connection');
+const dotenv = require('dotenv').config();
+
 app.use(express.json());
 app.use(cors({ origin: 'http://localhost:3000', methods: ['GET', 'POST'], credentials: true }));
 app.use(cookieParser());
@@ -20,8 +23,8 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   session({
-    key: 'userID',
-    secret: '$%nmbdshbhsj*',
+    key: process.env.KEY,
+    secret: process.env.SESSIONSECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
@@ -29,13 +32,6 @@ app.use(
     },
   })
 );
-
-const db = mysql.createConnection({
-  user: 'root',
-  host: 'localhost',
-  password: '',
-  database: 'acmeosdb',
-});
 
 app.post('/register', (req, res) => {
   const username = req.body.username;

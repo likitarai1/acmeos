@@ -1,0 +1,9 @@
+.main {
+  margin-left: 260px; /* Same as the width of the sidenav */
+}
+
+@media screen and (max-width: 820px) {
+  .main {
+    margin-left: 0px;
+  }
+}

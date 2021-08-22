@@ -102,13 +102,6 @@
   color: #ff5649;
 }
 
-.main {
-  background-color: #fff0e5;
-  margin-left: 260px; /* Same as the width of the sidenav */
-  font-size: 28px;
-  padding: 0px 10px;
-}
-
 @media screen and (max-height: 450px) {
   .sidenav {
     padding-top: 15px;
@@ -120,8 +113,5 @@
 @media screen and (max-width: 820px) {
   .sidenav {
     display: none;
-  }
-  .main {
-    margin-left: 0px;
   }
 }
