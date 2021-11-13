@@ -43,6 +43,11 @@ const Login = () => {
         localStorage.setItem('user', JSON.stringify(response.data.userdata));
         window.location.href = '/chapters';
         clearInput();
+      })
+      .catch((error) => {
+        console.log('Axios Error on login');
+        console.log(error);
+        console.log(error.response.data.msg);
       });
   };
 
@@ -91,7 +96,7 @@ const Login = () => {
                   }}
                   required
                 />
-                <input type="submit" name="submit" value="Login" onClick={login} />
+                <input type="submit" name="submit" value="Sign In" onClick={login} />
                 <p className="signup">
                   Don't have an account ?
                   <a href="#" onClick={toggleForm}>
