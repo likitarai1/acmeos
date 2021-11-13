@@ -1,25 +1,25 @@
-const express = require('express');
-const app = express();
-const mysql = require('mysql2');
-const cors = require('cors');
+const express = require('express'),
+  app = express(),
+  cors = require('cors'),
+  bcrypt = require('bcrypt'),
+  // bodyParser = require('body-parser'),
+  cookieParser = require('cookie-parser'),
+  session = require('express-session'),
+  db = require('./connection'),
+  PORT = process.env.PORT || 9000;
 
-const bcrypt = require('bcrypt');
-// const { response } = require('express');
 const saltRounds = 10;
 
-const bodyParser = require('body-parser');
-const cookieParser = require('cookie-parser');
-const session = require('express-session');
-
-const PORT = process.env.PORT || 9000;
-
-const db = require('./connection');
-const dotenv = require('dotenv').config();
-
 app.use(express.json());
-app.use(cors({ origin: 'http://localhost:3000', methods: ['GET', 'POST'], credentials: true }));
+app.use(
+  cors({
+    origin: 'http://localhost:3000',
+    methods: ['GET', 'POST', 'PATCH', 'DELETE'],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
-app.use(bodyParser.urlencoded({ extended: true }));
+// app.use(bodyParser.urlencoded({ extended: true }));
 
 app.use(
   session({
@@ -79,25 +79,46 @@ app.post('/login', (req, res) => {
     if (err) {
       res.send({ err: err });
     }
+    console.log('login result ', result.length);
 
     if (result.length > 0) {
       console.log('$$$ ', result[0]);
       bcrypt.compare(pass, result[0].pass, (err, response) => {
         if (response) {
-          req.session.user = result;
+          req.session.user = result[0].username;
           console.log('%%%>>>>>>>', req.session.user);
 
           // console.log(result);
-          res.send({ msg: 'successfully logged in', userdata: req.session.user[0] });
+          res
+            .status(200)
+            .send({ msg: 'successfully logged in', userdata: { username: req.session.user } });
         } else {
-          res.send({ msg: 'Incorrect password' });
+          res.status(401).send({ msg: 'Invalid username or password' });
         }
       });
     } else {
-      res.send({ message: 'User does not exist' });
+      res.status(401).send({ msg: 'Invalid username or password' });
     }
   });
 });
+
+require('./routes')(app);
+
+// catch 404
+app.use((req, res, next) => {
+  console.log(`Error 404 on ${req.url}.`);
+  res.status(404).send({ status: 404, error: 'Not found' });
+});
+
+// catch errors
+app.use((err, req, res, next) => {
+  const status = err.status || 500;
+  const msg = err.error || err.message;
+  console.log(`Error ${status} (${msg}) on ${req.method} ${req.url} with payload ${req.body}.`);
+  res.status(status).send({ status, error: msg });
+});
+
+module.exports = app;
 
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);

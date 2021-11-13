@@ -5,6 +5,8 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   const [status, setStatus] = useState(false); //loggedout
   const [isMobile, setIsMobile] = useState(true);
+  const [topnav, setTopnav] = useState('topnav');
+  const [navopen, setNavopen] = useState(false);
 
   const handleResize = () => {
     if (window.innerWidth > 820) {
@@ -18,11 +20,12 @@ const Navbar = () => {
     localStorage.removeItem('user');
     setStatus(false);
     console.log('Logged out');
+    window.location.href = '/';
   };
 
   useEffect(() => {
     window.addEventListener('resize', handleResize);
-  });
+  }, []);
 
   useEffect(() => {
     if (localStorage.getItem('user')) {
@@ -37,12 +40,13 @@ const Navbar = () => {
     }
   }, [status]);
 
-  const myFunction = () => {
-    let x = document.getElementById('Topnav');
-    if (x.className === 'topnav') {
-      x.className += ' responsive';
+  const toggleMobileNav = () => {
+    if (navopen) {
+      setTopnav('topnav');
+      setNavopen(false);
     } else {
-      x.className = 'topnav';
+      setTopnav('topnav responsive');
+      setNavopen(true);
     }
   };
 
@@ -72,7 +76,7 @@ const Navbar = () => {
             </Link>
           </div>
         ) : (
-          <div className="topnav" id="Topnav">
+          <div className={topnav} id="Topnav">
             <div className="symbol">Home</div>
             {localStorage.getItem('user') ? (
               <Link to="/" onClick={handleLogout}>
@@ -99,7 +103,7 @@ const Navbar = () => {
             <Link to="/test">Test your learning</Link>
             <Link to="/doubt">Ask a doubt</Link>
             {localStorage.getItem('user') ? <Link to="/profile">Your Profile</Link> : ''}
-            <a href="#" className="icon" onClick={myFunction}>
+            <a href="#" className="icon" onClick={toggleMobileNav}>
               <i className="fa fa-bars" style={{ color: '#3c2e55' }}></i>
             </a>
           </div>
