@@ -11,6 +11,7 @@ import DoubtForm from './components/Doubtpage/DoubtForm/DoubtForm';
 import Commentpage from './components/Commentpage/Commentpage';
 import Profile from './components/Profile/Profile';
 import Test from './components/Testpage/Test';
+import chap1 from './components/Contentpage/chapters/chap1';
 import './App.css';
 
 function App() {
@@ -55,6 +56,7 @@ function App() {
               <Route path="/comment" component={Commentpage} />
               <Route path="/test" component={Test} />
               <Route path="/profile" component={Profile} />
+              <Route path="/chap1" component={chap1} />
             </Switch>
           </div>
         </Container>
