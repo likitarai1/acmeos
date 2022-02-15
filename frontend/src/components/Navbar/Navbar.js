@@ -50,6 +50,10 @@ const Navbar = () => {
     }
   };
 
+  const redirectToHome = () => {
+    window.location.href = '/';
+  };
+
   return (
     <React.Fragment>
       <nav>
@@ -77,7 +81,9 @@ const Navbar = () => {
           </div>
         ) : (
           <div className={topnav} id="Topnav">
-            <div className="symbol">Home</div>
+            <div className="symbol" onClick={redirectToHome}>
+              AcmeOS
+            </div>
             {localStorage.getItem('user') ? (
               <Link to="/" onClick={handleLogout}>
                 Logout

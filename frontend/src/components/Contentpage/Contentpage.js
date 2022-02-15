@@ -64,14 +64,16 @@ const Contentpage = () => {
           <Card className="mb-3">
             <Card.Header>
               Yet to Explore!
-              <span style={{marginLeft : "8px"}}>
-                <i class="fa fa-check-circle-o" aria-hidden="true"></i>
+              <span style={{ marginLeft: '8px' }}>
+                <i className="fa fa-check-circle-o" aria-hidden="true"></i>
               </span>
             </Card.Header>
             <Card.Body>
               <Card.Title>{info.title}</Card.Title>
               <Card.Text>{info.desp}</Card.Text>
-              <Button variant="primary" href={info.link}>Start</Button>
+              <Button variant="primary" href={info.link}>
+                Start
+              </Button>
             </Card.Body>
           </Card>
         );
