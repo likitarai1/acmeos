@@ -13,6 +13,7 @@ import Profile from './components/Profile/Profile';
 import Test from './components/Testpage/Test';
 import chap1 from './components/Contentpage/chapters/chap1';
 import './App.css';
+import chap2 from './components/Contentpage/chapters/chap2';
 
 function App() {
   const [status, setStatus] = useState(false); //loggedout
@@ -57,6 +58,7 @@ function App() {
               <Route path="/test" component={Test} />
               <Route path="/profile" component={Profile} />
               <Route path="/chap1" component={chap1} />
+              <Route path="/chap2" component={chap2} />
             </Switch>
           </div>
         </Container>

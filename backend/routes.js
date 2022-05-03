@@ -5,4 +5,6 @@ module.exports = function (app) {
   app.use('/doubt', require('./routes/doubt'));
   app.use('/comment', require('./routes/comment'));
   app.use('/vote', require('./routes/vote'));
+  app.use('/note', require('./routes/note'));
+  app.use('/bookmark', require('./routes/bookmark'));
 };

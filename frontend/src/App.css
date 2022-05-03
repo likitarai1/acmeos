@@ -7,3 +7,7 @@
     margin-left: 0px;
   }
 }
+
+html ::selection{
+  background-color: rgb(237, 194, 248);
+}
