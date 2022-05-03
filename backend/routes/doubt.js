@@ -53,4 +53,18 @@ router.get('/getdoubt/:id', (req, res) => {
   });
 });
 
+// Fetch user specific notes
+router.get('/', (req, res) => {
+  // console.log('doubt get route params id -- ', req.params.id);
+  const id = req.query.username;
+  db.query('SELECT * FROM doubttbl WHERE username=?', [id], (err, result) => {
+    if (err) {
+      res.send(err);
+    } else {
+      // console.log('getdoubt result :: ', result);
+      res.send({ result });
+    }
+  });
+});
+
 module.exports = router;

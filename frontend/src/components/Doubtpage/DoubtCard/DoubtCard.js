@@ -22,7 +22,7 @@ const DoubtCard = ({ data }) => {
             </Col>
           </Row>
         </Card.Title>
-        <Card.Subtitle className="mb-2 ">
+        <Card.Subtitle className="mb-2">
           {tags.map((tag, index) => {
             return (
               <Badge bg="#32c749" key={index} className="categoryBadge ml-2">

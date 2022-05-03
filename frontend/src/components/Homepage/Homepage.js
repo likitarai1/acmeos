@@ -19,13 +19,13 @@ const Homepage = () => {
     {
       img: doubt,
       title: 'Doubt',
-      desp: 'Doubt filled your mind?? Got stucked?? No worries, just ask your doubts here and get your answer...',
+      desp: 'Doubt filled your mind?? Got stucked?? No worries, just ask your doubts here and get them answered',
       link: '/doubt',
     },
     {
       img: terminal,
       title: 'Terminal',
-      desp: '',
+      desp: 'Feeling bored with only concepts of OS? Wanna try some cool Linux commands? Hit the terminal',
       link: '/terminal',
     },
     {
@@ -64,23 +64,20 @@ const Homepage = () => {
         <div className="heading weprovide">We provide</div>
         <div className="servicescarddiv">
           <Row xs={1} md={2} lg={3} className="g-5 p-5">
-            {cardDtls.map(
-              (idx, key) => (
-                console.log(key, idx),
-                (
-                  <Col key={key}>
-                    <a href={idx.link}>
-                      <Card className="servicescard">
-                        <div className="imgBox">
-                          <Card.Img variant="top" src={idx.img} />
-                        </div>
-                        <Card.Body className="cardText">
-                          <div className="cardTitle">{idx.title}</div>
-                          <Card.Text>{idx.desp}</Card.Text>
-                        </Card.Body>
-                      </Card>
-                    </a>
-                    {/* <div className="card">
+            {cardDtls.map((idx, key) => (
+              <Col key={key}>
+                <a href={idx.link}>
+                  <Card className="servicescard">
+                    <div className="imgBox">
+                      <Card.Img variant="top" src={idx.img} />
+                    </div>
+                    <Card.Body className="cardText">
+                      <div className="cardTitle">{idx.title}</div>
+                      <Card.Text>{idx.desp}</Card.Text>
+                    </Card.Body>
+                  </Card>
+                </a>
+                {/* <div className="card">
                   <div className="imgBx">
                     <img src="https://images.unsplash.com/photo-1642707949566-0c45f08faae2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzQxODY0MA&ixlib=rb-1.2.1&q=85" />
                   </div>
@@ -93,10 +90,8 @@ const Homepage = () => {
                     </p>
                   </div>
                 </div> */}
-                  </Col>
-                )
-              )
-            )}
+              </Col>
+            ))}
           </Row>
         </div>
       </Row>
