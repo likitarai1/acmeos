@@ -6,7 +6,7 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const CheckedList = ({ list, feature }) => {
   const updateList = (id) => {
     if (feature === 'bookmark') {
-      console.log('Right!!!');
+      console.log('Right!!!',id);
       axios
         .delete('http://localhost:9000/bookmark/' + `${id}`)
         .then((res) => {
@@ -16,6 +16,18 @@ const CheckedList = ({ list, feature }) => {
         })
         .catch((err) => {
           console.log('error in bookmark delete ', err);
+        });
+    }
+    if (feature === 'inprogress') {
+      axios
+        .delete('http://localhost:9000/inprogress/' + `${id}`)
+        .then((res) => {
+          console.log('response of inprogress delete ', res);
+          alert('Chapter not in progress anymore!!');
+          window.location.reload();
+        })
+        .catch((err) => {
+          console.log('error in inprogress delete ', err);
         });
     }
   };
@@ -30,12 +42,12 @@ const CheckedList = ({ list, feature }) => {
               <InputGroup key={key}>
                 <InputGroup.Checkbox
                   aria-label="Checkbox for following text input"
-                  onClick={() => updateList(data.bookmarksid)}
+                  onClick={() => updateList(data.id)}
                 />
                 <ListGroup.Item className="list-text">
-                  <a href="/" className="link-text">
+                  <span href="/" className="link-text">
                     {data.title}
-                  </a>
+                  </span>
                 </ListGroup.Item>
               </InputGroup>
             );
