@@ -40,7 +40,7 @@ const Contentpage = () => {
     {
       title: 'chap 7',
       desp: 'anbcnh//dj',
-      link: '/chap1',
+      link: '/chap7',
     },
     {
       title: 'chap 8',
