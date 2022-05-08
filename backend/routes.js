@@ -7,4 +7,5 @@ module.exports = function (app) {
   app.use('/vote', require('./routes/vote'));
   app.use('/note', require('./routes/note'));
   app.use('/bookmark', require('./routes/bookmark'));
+  app.use('/inprogress', require('./routes/inprogress'));
 };
