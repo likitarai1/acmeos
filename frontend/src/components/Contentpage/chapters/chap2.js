@@ -6,24 +6,30 @@ import '../css/chap.css';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
+import Button from 'react-bootstrap/Button';
 import Content from '../../../util/Content';
+import { useLocation } from 'react-router-dom';
 
 const Chap2 = () => {
   const id = 'c2';
   const uname = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
   const [selected, setSelected] = useState('');
+  const [done, setDone] = useState(new URLSearchParams(useLocation().search).get('completed'));
+
   let bookmarked;
   if (uname) {
     bookmarked = JSON.parse(localStorage.getItem('bookmarks')).find(
       (chap) => chap.chapterid === id
     );
   }
+
   useEffect(() => {
     if (bookmarked === undefined) {
       setSelected('fa fa-bookmark-o');
     } else {
       setSelected('fa fa-bookmark');
     }
+    console.log('what is in done? ', typeof done);
   }, []);
 
   const toggleSelected = () => {
@@ -168,6 +174,21 @@ const Chap2 = () => {
           ></iframe>
         </div>
       </div>
+      {uname === null ? (<></>) : (done === 'true' ? (
+        <Button className="btn-success markDone" disabled>
+          Done!
+        </Button>
+      ) : (
+        <Button
+          className="markDone"
+          onClick={() => {
+            Content.changeStatus(id);
+            setDone('true');
+          }}
+        >
+          Mark As Done
+        </Button>
+      ))}
     </Container>
   );
 };

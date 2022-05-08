@@ -30,7 +30,7 @@ router.get('/', (req, res) => {
   };
 
   db.query(
-    'SELECT bookmarksid, bookmarks.chapterid, title, username FROM bookmarks LEFT JOIN chapters ON bookmarks.chapterid = chapters.chapterid WHERE bookmarks.username=?',
+    'SELECT bookmarksid AS id, bookmarks.chapterid, title, username FROM bookmarks LEFT JOIN chapters ON bookmarks.chapterid = chapters.chapterid WHERE bookmarks.username=?',
     [data.uname],
     (err, result) => {
       if (err) {
