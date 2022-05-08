@@ -98,7 +98,7 @@ console.log("??",uname);
     <Container className="p-4 content">
       <Row>
         <Col xs={11}>
-          <h1>Introduction to Operating System</h1>
+          <h1>UNIX Commands</h1>
         </Col>
         <Col xs={1}>
           {uname === null ? (
@@ -113,76 +113,78 @@ console.log("??",uname);
           )}
         </Col>
       </Row>
-      <h2>Definition</h2>
-      <p>
-        
-        An operating system is a program that acts as an interface between the user and the computer hardware and controls the execution of all kinds of programs.
-
-      </p>
-      <h4>Functions of Operating system </h4>
-      <p>
-        Operating system perform following functions: 
-      </p>
-      <p>
-        <b>1.	Convenience:</b>
-        An OS makes a computer more convenient to use.
-      </p>
-      <p>
-        <b>2.	Efficiency: </b>
-        An OS allows the computer system resources to be used efficiently.
-      </p>
-      <p>
-        <b>3.	Ability to Evolve: </b>
-        An OS should be constructed in such a way as to permit the effective development, testing, and introduction of new system functions at the same time without interfering with service.
-      </p>
-      <p>
-        <b>4.	Throughput: </b>
-        An OS should be constructed so that It can give maximum throughput (Number of tasks per unit time).
-      </p>
-
-      <h2>Major Functionalities of Operating System: </h2>
-      <p>
-        <b>•	Resource Management:</b>
-        When parallel accessing happens in the OS means when multiple users are accessing the system the OS works as Resource Manager, Its responsibility is to provide hardware to the user. It decreases the load in the system.
-      </p>
-      <p>
-        <b>•	Process Management: </b>
-        It includes various tasks like scheduling, termination of the process. OS manages various tasks at a time. Here CPU Scheduling happens means all the tasks would be done by the many algorithms that use for scheduling.
-      </p>
-      <p>
-        <b>•	Storage Management: </b>
-        The file system mechanism used for the management of the storage. 
-      </p>
-      <p>
-        <b>•	Memory Management: </b>
-        Refers to the management of primary memory. The operating system has to keep track, how much memory has been used and by whom. It has to decide which process needs memory space and how much. OS also has to allocate and deallocate the memory space.
-      </p>
-      <p>
-        <b>•	Security/Privacy Management: </b>
-        Privacy is also provided by the Operating system by means of passwords so that unauthorized applications can not access programs or data. For example, Windows uses Kerberos authentication to prevent unauthorized access to data.
-      </p>
-      
-
-      <h2>Types of Operating System</h2>
-      <ul>
-        <li>	Batch Operating System- Sequence of jobs in a program on a computer without manual interventions. </li>
-        <li>	Network operating system- computers running in different operating systems can participate in a common network (It is used for security purposes).</li>
-        <li>	Time-sharing operating System- allows many users to share the computer resources. (Max utilization of the resources).</li>
-        <li>	Distributed operating System- Manages a group of different computers and makes appear to be a single computer.</li>
-        <li>	Real-time operating system meant applications to fix the deadlines</li>
-      </ul>
-
-      <h2>Examples of Operating System are</h2>
-      <ul>
-        <li> Windows </li>
-        <li> GNU/Linux  </li>
-        <li> macOS </li>
-        <li> Android  </li>
-        <li> iOS </li>
-      </ul>
+      <h2>Files and Directories</h2>
       
       
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Manipulating Data</h2>
       
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Compressed Files</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Getting Information</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Network Communication</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Message between Userss</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Programming Utilities</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
+      <h2>Misc Commands</h2>
+      
+      
+      <div class="table-responsive-md">
+        <table class="table difftbl">
+
+        </table>
+      </div>
+
       {uname === null ? (<></>) : (done === 'true' ? (
         <Button className="btn-success markDone" disabled>
           Done!

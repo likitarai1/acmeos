@@ -2,9 +2,10 @@ import axios from 'axios';
 
 class Content {
 
-    uname = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
+    static uname = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
     static getBookmarkID(ID){
+      console.log("Hello from me",this.uname);
         //getbookmarkid
         axios
           .get('http://localhost:9000/bookmark/getid', {
@@ -22,6 +23,22 @@ class Content {
             console.log('Axios Error ', error);
           });
       };
+
+    static changeStatus(ID){
+      let options = {
+        username: this.uname.username,
+        chapid: ID
+      }
+      console.log("OPTIONS ",this.uname);
+      axios
+          .patch('http://localhost:9000/inprogress/', options)
+          .then((res) => {
+            console.log("res::",res);
+          })
+          .catch((error) => {
+            console.log('Axios Error ', error);
+          });
+    }
 
 }
 

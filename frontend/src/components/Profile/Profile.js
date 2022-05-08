@@ -107,7 +107,7 @@ const Profile = () => {
 
   const fetchProfileData = async () => {
     setLoading(true);
-    const [notes, doubts, bookmarks] = await Promise.all([
+    const [notes, doubts, bookmarks, inprogress] = await Promise.all([
       axios.get('http://localhost:9000/note', reqUserParam).catch((error) => {
         console.log('Axios note Error');
         console.log(error);
@@ -120,16 +120,21 @@ const Profile = () => {
         console.log('Axios bookmark Error');
         console.log(error);
       }),
+      axios.get('http://localhost:9000/inprogress', reqUserParam).catch((error) => {
+        console.log('Axios inprogress Error');
+        console.log(error);
+      }),
     ]);
     setLoading(false);
     console.log('notes', notes);
     console.log('doubts', doubts);
     console.log('bomk', bookmarks);
+    console.log('inprg', inprogress);
     setProfileData({
       notes: notes.data.result,
       doubts: doubts.data.result,
       bookmarks: bookmarks.data.result,
-      inprogress: [],
+      inprogress: inprogress.data.result,
     });
   };
 
@@ -157,7 +162,7 @@ const Profile = () => {
                 <a>
                   <img
                     className="avatar__2sMj img-fluid img-thumbnail rounded"
-                    src="https://assets.leetcode.com/users/likita_rai/avatar_1632629838.png"
+                    src=""
                     alt="your avatar"
                   />
                 </a>
@@ -179,10 +184,10 @@ const Profile = () => {
                       Creative
                     </Badge>
                     <Badge bg="#32c749" className="categoryBadge ml-2">
-                      Creative
+                      Enthusiastic
                     </Badge>
                     <Badge bg="#32c749" className="categoryBadge ml-2">
-                      Creative
+                      Curious
                     </Badge>
                   </div>
                 </div>
@@ -204,10 +209,10 @@ const Profile = () => {
         >
           <Tab eventKey="inprogress" title="In progress">
             <h3>Continue Learning</h3>
-            {profileData.inprogress ? (
+            {profileData.inprogress.length === 0 ? (
               <h6>Nothing in progress</h6>
             ) : (
-              <CheckedList list={profileData.inprogress} />
+              <CheckedList list={profileData.inprogress} feature="inprogress" />
             )}
           </Tab>
           <Tab eventKey="doubts" title="Doubts">

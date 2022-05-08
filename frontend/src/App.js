@@ -16,6 +16,9 @@ import './App.css';
 import chap2 from './components/Contentpage/chapters/chap2';
 import chap3 from './components/Contentpage/chapters/chap3';
 import chap6 from './components/Contentpage/chapters/chap6';
+import chap7 from './components/Contentpage/chapters/chap7';
+import chap4 from './components/Contentpage/chapters/chap4';
+import chap5 from './components/Contentpage/chapters/chap5';
 
 function App() {
   const [status, setStatus] = useState(false); //loggedout
@@ -63,6 +66,9 @@ function App() {
               <Route path="/chap2" component={chap2} />
               <Route path="/chap3" component={chap3} />
               <Route path="/chap6" component={chap6} />
+              <Route path="/chap7" component={chap7} />
+              <Route path="/chap4" component={chap4} />
+              <Route path="/chap5" component={chap5} />
             </Switch>
           </div>
         </Container>
