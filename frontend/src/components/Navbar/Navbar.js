@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
+import acmeosLogo from './../../images/acmeosLogo.png';
 
 const Navbar = () => {
   const [status, setStatus] = useState(false); //loggedout
@@ -61,15 +62,20 @@ const Navbar = () => {
           <div className="sidenav">
             <div
               style={{
-                backgroundColor: 'wheat',
-                paddingLeft: '25%',
+                // paddingLeft: '25%',
                 height: '25%',
                 marginLeft: '5%',
                 marginRight: '5%',
               }}
             >
-              Image
+              <img src={acmeosLogo} alt="logo" style={{
+                // paddingLeft: '25%',
+                height: '68%',
+                marginLeft: '5%',
+                marginRight: '5%',
+              }}/>
             </div>
+            
             <Link to="/chapters">Chapters</Link>
             <Link to="/terminal">Terminal</Link>
             <Link to="/test">Test your learning</Link>
