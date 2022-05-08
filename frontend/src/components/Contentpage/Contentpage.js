@@ -7,6 +7,54 @@ import Container from 'react-bootstrap/Container';
 
 const Contentpage = () => {
   const [contentinfo, setContentInfo] = useState([
+    {
+      id: 'c1',
+      title: 'Introduction To OS',
+      desp: 'Definition, Function & Functionalities of OS, Types of OS.',
+      link: '/chap1',
+    },
+    {
+      id: 'c2',
+      title: 'Process vs Thread',
+      desp: 'What is Process & Thread?, Similarities and Difference between Process & Thread.',
+      link: '/chap2',
+    },
+    {
+      id: 'c3',
+      title: 'Process Scheduling',
+      desp: 'Process schedulers and Types, Process scheduling in OS, CPU Scheduling, Process Scheduling Algorithms.',
+      link: '/chap3',
+    },
+    {
+      id: 'c4',
+      title: 'Process Synchronization',
+      desp: 'Definition, Types of Process Synchronization, Semaphores, Classic synchronization problems.',
+      link: '/chap4',
+    },
+    {
+      id: 'c5',
+      title: 'Deadlock',
+      desp: 'What is Deadlock?, Deadlock Detection, Deadlock Prevantation, Deadlock Avoidance, Banker Algorithm, RAG.',
+      link: '/chap5',
+    },
+    {
+      id: 'c6',
+      title: 'Memory Management',
+      desp: 'Definition, Fragmentation, Paging, Pros & Cons of Paging, Page replacement algorithms.',
+      link: '/chap1 ',
+    },
+    {
+      id: 'c7',
+      title: 'Disk Scheduling',
+      desp: 'Definition, FCFS, SJN, SCAN algorithm, C-SCAN algorithm.',
+      link: '/chap1',
+    },
+    {
+      id: 'c8',
+      title: 'Unix Commands',
+      desp: 'Various UNIX commands and their description.',
+      link: '/chap1',
+    },
     
   ]);
 
