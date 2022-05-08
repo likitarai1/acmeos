@@ -47,7 +47,7 @@ const Contentpage = () => {
       id: 'c7',
       title: 'Disk Scheduling',
       desp: 'Definition, FCFS, SJN, SCAN algorithm, C-SCAN algorithm.',
-      link: '/chap1',
+      link: '/chap7',
     },
     {
       id: 'c8',
@@ -199,62 +199,6 @@ const Contentpage = () => {
             </Card.Body>
           </Card>
         );
-
-        // completedChaptersArr.forEach((element) => {
-        //   if (element.chapid === info?.id) {
-        //     return (
-        //       <Card className="mb-3" key={key}>
-        //         <Card.Header style={{ color: 'green' }}>
-        //           Explored!
-        //           <span style={{ marginLeft: '8px' }}>
-        //             <i className="fa fa-check-circle-o" aria-hidden="true"></i>
-        //           </span>
-        //         </Card.Header>
-        //         <Card.Body>
-        //           <Card.Title>{info.title}</Card.Title>
-        //           <Card.Text>{info.desp}</Card.Text>
-        //           <Button variant="primary" href={info.link}>
-        //             View
-        //           </Button>
-        //           <Button
-        //             variant="primary"
-        //             href={info.link}
-        //             style={{ marginLeft: '10px' }}
-        //             onClick={() => addInProgress(info?.id)}
-        //           >
-        //             Start
-        //           </Button>
-        //         </Card.Body>
-        //       </Card>
-        //     );
-        //   } else {
-        //     return (
-        //       <Card className="mb-3" key={key}>
-        //         <Card.Header>
-        //           Yet to Explore!
-        //           <span style={{ marginLeft: '8px' }}>
-        //             <i className="fa fa-check-circle-o" aria-hidden="true"></i>
-        //           </span>
-        //         </Card.Header>
-        //         <Card.Body>
-        //           <Card.Title>{info.title}</Card.Title>
-        //           <Card.Text>{info.desp}</Card.Text>
-        //           <Button variant="primary" href={info.link}>
-        //             View
-        //           </Button>
-        //           <Button
-        //             variant="primary"
-        //             href={info.link}
-        //             style={{ marginLeft: '10px' }}
-        //             onClick={() => addInProgress(info?.id)}
-        //           >
-        //             Start
-        //           </Button>
-        //         </Card.Body>
-        //       </Card>
-        //     );
-        //   }
-        // });
       })}
     </Container>
   );
