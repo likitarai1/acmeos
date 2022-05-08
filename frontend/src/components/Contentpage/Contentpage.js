@@ -20,7 +20,7 @@ const Contentpage = () => {
     {
       title: 'chap 3',
       desp: 'anbcnh//dj',
-      link: '/chap1',
+      link: '/chap3',
     },
     {
       title: 'chap 4',
@@ -35,7 +35,7 @@ const Contentpage = () => {
     {
       title: 'chap 6',
       desp: 'anbcnh//dj',
-      link: '/chap1',
+      link: '/chap6',
     },
     {
       title: 'chap 7',

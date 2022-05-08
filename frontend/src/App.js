@@ -14,6 +14,8 @@ import Test from './components/Testpage/Test';
 import chap1 from './components/Contentpage/chapters/chap1';
 import './App.css';
 import chap2 from './components/Contentpage/chapters/chap2';
+import chap3 from './components/Contentpage/chapters/chap3';
+import chap6 from './components/Contentpage/chapters/chap6';
 
 function App() {
   const [status, setStatus] = useState(false); //loggedout
@@ -59,6 +61,8 @@ function App() {
               <Route path="/profile" component={Profile} />
               <Route path="/chap1" component={chap1} />
               <Route path="/chap2" component={chap2} />
+              <Route path="/chap3" component={chap3} />
+              <Route path="/chap6" component={chap6} />
             </Switch>
           </div>
         </Container>
