@@ -8,55 +8,54 @@ import Container from 'react-bootstrap/Container';
 const Contentpage = () => {
   const [contentinfo, setContentInfo] = useState([
     {
-      title: 'chap 1',
-      desp: 'anbcnhdj',
+      id: 'c1',
+      title: 'Introduction To OS',
+      desp: 'Definition, Function & Functionalities of OS, Types of OS.',
       link: '/chap1',
     },
     {
-      title: 'chap 2',
-      desp: 'anbcncdcsbdnbsmj89090j',
+      id: 'c2',
+      title: 'Process vs Thread',
+      desp: 'What is Process & Thread?, Similarities and Difference between Process & Thread.',
       link: '/chap2',
     },
     {
-      title: 'chap 3',
-      desp: 'anbcnh//dj',
+      id: 'c3',
+      title: 'Process Scheduling',
+      desp: 'Process schedulers and Types, Process scheduling in OS, CPU Scheduling, Process Scheduling Algorithms.',
+      link: '/chap3',
+    },
+    {
+      id: 'c4',
+      title: 'Process Synchronization',
+      desp: 'Definition, Types of Process Synchronization, Semaphores, Classic synchronization problems.',
+      link: '/chap4',
+    },
+    {
+      id: 'c5',
+      title: 'Deadlock',
+      desp: 'What is Deadlock?, Deadlock Detection, Deadlock Prevantation, Deadlock Avoidance, Banker Algorithm, RAG.',
+      link: '/chap5',
+    },
+    {
+      id: 'c6',
+      title: 'Memory Management',
+      desp: 'Definition, Fragmentation, Paging, Pros & Cons of Paging, Page replacement algorithms.',
+      link: '/chap1 ',
+    },
+    {
+      id: 'c7',
+      title: 'Disk Scheduling',
+      desp: 'Definition, FCFS, SJN, SCAN algorithm, C-SCAN algorithm.',
       link: '/chap1',
     },
     {
-      title: 'chap 4',
-      desp: 'anbcnh//dj',
+      id: 'c8',
+      title: 'Unix Commands',
+      desp: 'Various UNIX commands and their description.',
       link: '/chap1',
     },
-    {
-      title: 'chap 5',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
-    {
-      title: 'chap 6',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
-    {
-      title: 'chap 7',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
-    {
-      title: 'chap 8',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
-    {
-      title: 'chap 9',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
-    {
-      title: 'chap 10',
-      desp: 'anbcnh//dj',
-      link: '/chap1',
-    },
+    
   ]);
 
   const uname = JSON.parse(localStorage.getItem('user'));

@@ -89,3 +89,9 @@ tr:nth-child(even) {
 .shadow {
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.4);
 }
+
+.markDone{
+  float: right;
+  margin-bottom: 2%;
+}
+
