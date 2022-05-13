@@ -53,7 +53,7 @@ const Contentpage = () => {
       id: 'c8',
       title: 'Unix Commands',
       desp: 'Various UNIX commands and their description.',
-      link: '/chap1',
+      link: '/chap8',
     },
     
   ]);

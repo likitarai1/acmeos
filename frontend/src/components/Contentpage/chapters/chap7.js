@@ -307,7 +307,7 @@ console.log("??",uname);
       Current position of head= 50 <br/>
       Direction: Right
       </p>
-      <img src={scan}/>
+      <img src={scan} alt="<write short image description>" class="img-fluid" />
       <p>
         here total seek count is calculated as: <br/>
         = (199-50)+(199-16) <br/>
@@ -335,7 +335,7 @@ console.log("??",uname);
       Current position of head= 50 <br/>
       Direction: Right
       </p>
-      <img src={cscan}/>
+      <img src={cscan} alt="<write short image description>" class="img-fluid" />
       <p>
         here total seek count is calculated as: <br/>
         = (199-50)+(199-0)+(43-0) <br/>
@@ -363,7 +363,7 @@ console.log("??",uname);
       Current position of head= 50 <br/>
       Direction: Right
       </p>
-      <img src={look}/>
+      <img src={look} alt="<write short image description>" class="img-fluid" />
       <p>
         here total seek count is calculated as: <br/>
         = (190-50)+(190-16) <br/>
@@ -391,7 +391,7 @@ console.log("??",uname);
       Current position of head= 50 <br/>
       Direction: Right
       </p>
-      <img src={clook}/>
+      <img src={clook} alt="<write short image description>" class="img-fluid" />
       <p>
         here total seek count is calculated as: <br/>
         = (190-50)+(190-16)+(43-16) <br/>
