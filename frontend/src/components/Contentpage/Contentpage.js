@@ -41,7 +41,7 @@ const Contentpage = () => {
       id: 'c6',
       title: 'Memory Management',
       desp: 'Definition, Fragmentation, Paging, Pros & Cons of Paging, Page replacement algorithms.',
-      link: '/chap1 ',
+      link: '/chap6',
     },
     {
       id: 'c7',

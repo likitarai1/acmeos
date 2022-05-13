@@ -12,14 +12,14 @@ import Commentpage from './components/Commentpage/Commentpage';
 import Profile from './components/Profile/Profile';
 import Test from './components/Testpage/Test';
 import chap1 from './components/Contentpage/chapters/chap1';
-import './App.css';
 import chap2 from './components/Contentpage/chapters/chap2';
 import chap3 from './components/Contentpage/chapters/chap3';
-import chap6 from './components/Contentpage/chapters/chap6';
-import chap7 from './components/Contentpage/chapters/chap7';
 import chap4 from './components/Contentpage/chapters/chap4';
 import chap5 from './components/Contentpage/chapters/chap5';
+import chap6 from './components/Contentpage/chapters/chap6';
+import chap7 from './components/Contentpage/chapters/chap7';
 import chap8 from './components/Contentpage/chapters/chap8';
+import './App.css';
 
 function App() {
   const [status, setStatus] = useState(false); //loggedout
@@ -66,10 +66,10 @@ function App() {
               <Route path="/chap1" component={chap1} />
               <Route path="/chap2" component={chap2} />
               <Route path="/chap3" component={chap3} />
-              <Route path="/chap6" component={chap6} />
-              <Route path="/chap7" component={chap7} />
               <Route path="/chap4" component={chap4} />
               <Route path="/chap5" component={chap5} />
+              <Route path="/chap6" component={chap6} />
+              <Route path="/chap7" component={chap7} />
               <Route path="/chap8" component={chap8} />
             </Switch>
           </div>

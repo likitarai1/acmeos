@@ -3,6 +3,7 @@ import axios from 'axios';
 import './Login.css';
 import loginimg from './../../images/loginimg.png';
 import regimg from './../../images/regimg.png';
+// import Toast from 'react-bootstrap/Toast';
 
 const Login = () => {
   const [isActive, setActive] = useState('false');
@@ -12,6 +13,10 @@ const Login = () => {
   const [emailreg, setEmailReg] = useState('');
   const [cpasswordreg, setCPasswordReg] = useState('');
   const [passwordreg, setPasswordReg] = useState('');
+  // const [show, setShow] = useState(false);
+  // const [message, setMessage] = useState('');
+  // const [toastbg, setToastbg] = useState('');
+  // const [toasttitle, setToasttilte] = useState('');
 
   const toggleForm = () => {
     setActive(!isActive);
@@ -28,7 +33,20 @@ const Login = () => {
       })
       .then((response) => {
         console.log('>>', response);
+        // setActive(!isActive);
+        // setShow(true);
+        // setToasttilte('Success');
+        // setToastbg('lightgreen');
+        // setMessage(response.data.message);
         clearInput();
+      // })
+      // .catch((err) => {
+        // setShow(true);
+        // setToasttilte('Error');
+        // setToastbg('#f8d7da');
+        // setMessage(err.data.message);
+        // console.log(err);
+        // console.log("wrong username");
       });
   };
 
@@ -169,6 +187,12 @@ const Login = () => {
             </div>
           </div>
         </div>
+        {/* <Toast show={show} delay={5000} position="top-end" autohide> */}
+          {/* <Toast.Header>
+            <strong className="mr-auto">{toasttitle}</strong>
+          </Toast.Header> */}
+          {/* <Toast.Body>{message}</Toast.Body>
+        </Toast> */}
       </section>
     </React.Fragment>
   );
