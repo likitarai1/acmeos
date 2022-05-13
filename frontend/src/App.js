@@ -18,6 +18,7 @@ import chap4 from './components/Contentpage/chapters/chap4';
 import chap5 from './components/Contentpage/chapters/chap5';
 import chap6 from './components/Contentpage/chapters/chap6';
 import chap7 from './components/Contentpage/chapters/chap7';
+import chap8 from './components/Contentpage/chapters/chap8';
 import './App.css';
 
 function App() {
@@ -69,6 +70,7 @@ function App() {
               <Route path="/chap5" component={chap5} />
               <Route path="/chap6" component={chap6} />
               <Route path="/chap7" component={chap7} />
+              <Route path="/chap8" component={chap8} />
             </Switch>
           </div>
         </Container>
