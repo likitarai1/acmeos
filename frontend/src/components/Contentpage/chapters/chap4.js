@@ -201,7 +201,27 @@ const Chap4 = () => {
           style={{ padding: "50px", width: "50%", height: "10%" }}
         />
       </center>
-      <code></code>
+      <div className="terminal space shadow">
+        <div className="top">
+          <div className="btns">
+            <span className="circle red"></span>
+            <span className="circle yellow"></span>
+            <span className="circle green"></span>
+          </div>
+          <div className="title">Dining Philosopher</div>
+        </div>
+        <div className="video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/OgQkQNMJD6A"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       <p>
         Semaphores can result in deadlock due to programming errors. Some ways
         to avoid deadlock are:
@@ -212,6 +232,27 @@ const Chap4 = () => {
         <li>Alternate choice of first chopstick.</li>
       </ol>
       <h4>Producer Consumer:</h4>
+      <div className="terminal space shadow">
+        <div className="top">
+          <div className="btns">
+            <span className="circle red"></span>
+            <span className="circle yellow"></span>
+            <span className="circle green"></span>
+          </div>
+          <div className="title">Producer Consumer</div>
+        </div>
+        <div className="video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/W_jW4GnvCBw"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       <p>
         The producer consumer problem is a synchronization problem. There is a
         fixed size buffer and the producer produces items and enters them into
@@ -271,6 +312,27 @@ const Chap4 = () => {
         buffer has increased by 1.
       </p>
       <h4>Reader Writer:</h4>
+      <div className="terminal space shadow">
+        <div className="top">
+          <div className="btns">
+            <span className="circle red"></span>
+            <span className="circle yellow"></span>
+            <span className="circle green"></span>
+          </div>
+          <div className="title">Reader Writer</div>
+        </div>
+        <div className="video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/X9dyoOEoZKs"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       <h5>Reader Process</h5>
       <p>The code that defines the reader process is given below,</p>
       <center>
@@ -305,27 +367,6 @@ const Chap4 = () => {
         wrt. After that no other writer can access the object. When a writer is
         done writing into the object, signal operation is performed on wrt.
       </p>
-      <div className="terminal space shadow">
-        <div className="top">
-          <div className="btns">
-            <span className="circle red"></span>
-            <span className="circle yellow"></span>
-            <span className="circle green"></span>
-          </div>
-          <div className="title">Process vs Thread</div>
-        </div>
-        <div className="video">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/S51ETEkwrCc"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
       {uname === null ? (<></>) : (done === 'true' ? (
         <Button className="btn-success markDone" disabled>
           Done!

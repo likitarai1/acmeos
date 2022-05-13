@@ -106,6 +106,27 @@ const Chap5 = () => {
         operating systems when there are two or more processes that hold some
         resources and wait for resources held by others.
       </p>
+      <div className="terminal space shadow">
+        <div className="top">
+          <div className="btns">
+            <span className="circle red"></span>
+            <span className="circle yellow"></span>
+            <span className="circle green"></span>
+          </div>
+          <div className="title">What is Deadlock?</div>
+        </div>
+        <div className="video">
+          <iframe
+            width="100%"
+            height="100%"
+            src="https://www.youtube.com/embed/eLytaqFkZoI"
+            title="YouTube video player"
+            frameBorder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          ></iframe>
+        </div>
+      </div>
       <h4>Deadlock Detection</h4>
       <ol>
         <li>
@@ -121,7 +142,7 @@ const Chap5 = () => {
           varies according to different situations.
         </li>
       </ol>
-      <h4>Deadlock Prevantation</h4>
+      <h4>Deadlock Prevention</h4>
       <h5>Mutual Exclusion</h5>
       <p>
         There should be a resource that can only be held by one process at a
@@ -258,30 +279,8 @@ const Chap5 = () => {
       </p>
       <center><img src={vertices} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
 
-      <p>Now coming to the edges of RAG.There are two types of edges in RAG –</p>
+      <p>Now coming to the edges of RAG. There are two types of edges in RAG –</p>
       <center><img src={edges} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
-
-      <div className="terminal space shadow">
-        <div className="top">
-          <div className="btns">
-            <span className="circle red"></span>
-            <span className="circle yellow"></span>
-            <span className="circle green"></span>
-          </div>
-          <div className="title">Process vs Thread</div>
-        </div>
-        <div className="video">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/S51ETEkwrCc"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
       {uname === null ? (<></>) : (done === 'true' ? (
         <Button className="btn-success markDone" disabled>
           Done!
