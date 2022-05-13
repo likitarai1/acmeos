@@ -153,27 +153,6 @@ const Chap2 = () => {
           </tbody>
         </table>
       </div>
-      <div className="terminal space shadow">
-        <div className="top">
-          <div className="btns">
-            <span className="circle red"></span>
-            <span className="circle yellow"></span>
-            <span className="circle green"></span>
-          </div>
-          <div className="title">Process vs Thread</div>
-        </div>
-        <div className="video">
-          <iframe
-            width="100%"
-            height="100%"
-            src="https://www.youtube.com/embed/S51ETEkwrCc"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        </div>
-      </div>
       {uname === null ? (<></>) : (done === 'true' ? (
         <Button className="btn-success markDone" disabled>
           Done!

@@ -60,7 +60,7 @@ app.post('/register', (req, res) => {
               console.log(result);
               console.log('email: ', email);
               console.log('name: ', username);
-              res.send({ result });
+              res.send({ message: "Account created successfully" });
             }
           }
         );
