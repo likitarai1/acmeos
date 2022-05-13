@@ -114,7 +114,7 @@ const Chap2 = () => {
         <li>Both can create children </li>
       </ul>
       <h4>Difference between Threads and Processes </h4>
-      <div>
+      <div className="table-responsive-md">
         <table className="table difftbl">
           <thead>
             <tr>
@@ -153,7 +153,9 @@ const Chap2 = () => {
           </tbody>
         </table>
       </div>
-      {uname === null ? (<></>) : (done === 'true' ? (
+      {uname === null ? (
+        <></>
+      ) : done === 'true' ? (
         <Button className="btn-success markDone" disabled>
           Done!
         </Button>
@@ -167,7 +169,7 @@ const Chap2 = () => {
         >
           Mark As Done
         </Button>
-      ))}
+      )}
     </Container>
   );
 };
