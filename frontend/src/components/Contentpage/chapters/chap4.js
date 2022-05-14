@@ -107,8 +107,11 @@ const Chap4 = () => {
         <img
           src={procesyn}
           style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Types of process synchronization"
+          class="img-fluid"
         />
       </center>
+      
       <h4>The Critical-Section Problem</h4>
       <p>
         The important feature of the system is that, when one process is
@@ -166,6 +169,8 @@ const Chap4 = () => {
         <img
           src={semaphore}
           style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Types of semaphores"
+          class="img-fluid"
         />
       </center>
       <p>
@@ -181,6 +186,8 @@ const Chap4 = () => {
         <img
           src={snippet1}
           style={{ padding: "50px", width: "45%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
 
@@ -189,6 +196,8 @@ const Chap4 = () => {
         <img
           src={snippet2}
           style={{ padding: "50px", width: "38%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <h3>
@@ -199,6 +208,8 @@ const Chap4 = () => {
         <img
           src={snippet3}
           style={{ padding: "50px", width: "50%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <code></code>
@@ -229,6 +240,8 @@ const Chap4 = () => {
         <img
           src={snippet4}
           style={{ padding: "50px", width: "45%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <p>
@@ -257,6 +270,8 @@ const Chap4 = () => {
         <img
           src={snippet5}
           style={{ padding: "50px", width: "45%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <p>
@@ -277,6 +292,8 @@ const Chap4 = () => {
         <img
           src={snippet6}
           style={{ padding: "50px", width: "45%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <p>
@@ -298,6 +315,8 @@ const Chap4 = () => {
         <img
           src={snippet7}
           style={{ padding: "50px", width: "45%", height: "10%" }}
+          alt="code snippet"
+          class="img-fluid"
         />
       </center>
       <p>

@@ -7,14 +7,14 @@ import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Content from "../../../util/Content";
-import Button from 'react-bootstrap/Button';
-import { useLocation } from 'react-router-dom';
-import mutualexc from "./../../../images/contentpage/mutualexc.png"
-import holdwait from "./../../../images/contentpage/holdwait.png"
-import nopreemption from "./../../../images/contentpage/nopreemption.png"
-import circularwait from "./../../../images/contentpage/circularwait.png"
-import vertices from "./../../../images/contentpage/vertices.png"
-import edges from "./../../../images/contentpage/edges.png"
+import Button from "react-bootstrap/Button";
+import { useLocation } from "react-router-dom";
+import mutualexc from "./../../../images/contentpage/mutualexc.png";
+import holdwait from "./../../../images/contentpage/holdwait.png";
+import nopreemption from "./../../../images/contentpage/nopreemption.png";
+import circularwait from "./../../../images/contentpage/circularwait.png";
+import vertices from "./../../../images/contentpage/vertices.png";
+import edges from "./../../../images/contentpage/edges.png";
 
 const Chap5 = () => {
   const id = "c5";
@@ -22,7 +22,9 @@ const Chap5 = () => {
     ? JSON.parse(localStorage.getItem("user"))
     : null;
   const [selected, setSelected] = useState("");
-  const [done, setDone] = useState(new URLSearchParams(useLocation().search).get('completed'));
+  const [done, setDone] = useState(
+    new URLSearchParams(useLocation().search).get("completed")
+  );
 
   let bookmarked;
   if (uname) {
@@ -127,7 +129,14 @@ const Chap5 = () => {
         There should be a resource that can only be held by one process at a
         time.
       </p>
-      <center><img src={mutualexc} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <center>
+        <img
+          src={mutualexc}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Mutual Exclusion"
+          class="img-fluid"
+        />
+      </center>
       <h5>Hold and Wait</h5>
       <p>
         A process can hold multiple resources and still request more resources
@@ -135,7 +144,14 @@ const Chap5 = () => {
         Process 2 holds Resource 2 and Resource 3 and is requesting the Resource
         1 which is held by Process 1.
       </p>
-      <center><img src={holdwait} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <center>
+        <img
+          src={holdwait}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Hold and Wait"
+          class="img-fluid"
+        />
+      </center>
       <h5>No Preemption</h5>
       <p>
         A resource cannot be preempted from a process by force. A process can
@@ -143,7 +159,14 @@ const Chap5 = () => {
         cannot preempt Resource 1 from Process 1. It will only be released when
         Process 1 relinquishes it voluntarily after its execution is complete.
       </p>
-      <center><img src={nopreemption} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <center>
+        <img
+          src={nopreemption}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="No Preemption"
+          class="img-fluid"
+        />
+      </center>
       <h5>Circular Wait</h5>
       <p>
         A process is waiting for the resource held by the second process, which
@@ -154,7 +177,14 @@ const Chap5 = () => {
         allocated Resource 1 and it is requesting Resource 2. This forms a
         circular wait loop.
       </p>
-      <center><img src={circularwait} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <center>
+        <img
+          src={circularwait}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="circular wait"
+          class="img-fluid"
+        />
+      </center>
       <h4>Deadlock Avoidance</h4>
       <p>Deadlock avoidance can be done with Banker’s Algorithm.</p>
       <h4>Banker’s Algorithm</h4>
@@ -252,14 +282,31 @@ const Chap5 = () => {
       </p>
       <p>
         So, resource allocation graph is explained to us what is the state of
-        the system in terms of <code>processes and resources</code>. Like how many resources
-        are available, how many are allocated and what is the request of each
-        process. Everything can be represented in terms of the diagram.
+        the system in terms of <code>processes and resources</code>. Like how
+        many resources are available, how many are allocated and what is the
+        request of each process. Everything can be represented in terms of the
+        diagram.
       </p>
-      <center><img src={vertices} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <center>
+        <img
+          src={vertices}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Vertices"
+          class="img-fluid"
+        />
+      </center>
 
-      <p>Now coming to the edges of RAG.There are two types of edges in RAG –</p>
-      <center><img src={edges} style={{ padding: '50px', width: '80%', height: '10%' }} /></center>
+      <p>
+        Now coming to the edges of RAG.There are two types of edges in RAG –
+      </p>
+      <center>
+        <img
+          src={edges}
+          style={{ padding: "50px", width: "80%", height: "10%" }}
+          alt="Edges"
+          class="img-fluid"
+        />
+      </center>
 
       <div className="terminal space shadow">
         <div className="top">
@@ -282,7 +329,9 @@ const Chap5 = () => {
           ></iframe>
         </div>
       </div>
-      {uname === null ? (<></>) : (done === 'true' ? (
+      {uname === null ? (
+        <></>
+      ) : done === "true" ? (
         <Button className="btn-success markDone" disabled>
           Done!
         </Button>
@@ -291,12 +340,12 @@ const Chap5 = () => {
           className="markDone"
           onClick={() => {
             Content.changeStatus(id);
-            setDone('true');
+            setDone("true");
           }}
         >
           Mark As Done
         </Button>
-      ))}
+      )}
     </Container>
   );
 };
