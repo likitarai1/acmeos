@@ -11,6 +11,7 @@ import DoubtForm from './components/Doubtpage/DoubtForm/DoubtForm';
 import Commentpage from './components/Commentpage/Commentpage';
 import Profile from './components/Profile/Profile';
 import Test from './components/Testpage/Test';
+import ProfileEditForm from './components/Profile/ProfileEditForm';
 import chap1 from './components/Contentpage/chapters/chap1';
 import chap2 from './components/Contentpage/chapters/chap2';
 import chap3 from './components/Contentpage/chapters/chap3';
@@ -63,6 +64,7 @@ function App() {
               <Route path="/comment" component={Commentpage} />
               <Route path="/test" component={Test} />
               <Route path="/profile" component={Profile} />
+              <Route path="/profileEdit" component={ProfileEditForm} />
               <Route path="/chap1" component={chap1} />
               <Route path="/chap2" component={chap2} />
               <Route path="/chap3" component={chap3} />

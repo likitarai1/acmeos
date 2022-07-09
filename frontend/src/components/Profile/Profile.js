@@ -16,6 +16,7 @@ import CheckedList from './CheckedList';
 import SimpleList from './SimpleList';
 import CustomModal from '../CustomModal/CustomModal';
 import CustomAccordion from '../CustomAccordion/CustomAccordion';
+import profilePic from './../../images/profilepic.jpg';
 
 const Profile = () => {
   const [show, setShow] = useState(false);
@@ -162,7 +163,7 @@ const Profile = () => {
                 <a>
                   <img
                     className="avatar__2sMj img-fluid img-thumbnail rounded"
-                    src=""
+                    src={profilePic}
                     alt="your avatar"
                   />
                 </a>
@@ -172,12 +173,12 @@ const Profile = () => {
               <div className="info_wrapper">
                 <div className="info">
                   <div className="info_name">
-                    <span className="">Likita Rai&nbsp;</span>
-                    {/* <span>
-                      <a className="" href="/profileEdit/">
+                    <span className="">{uname.username}&nbsp;</span>
+                    <span>
+                      <a className="" href="/profileEdit">
                         <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                       </a>
-                    </span> */}
+                    </span>
                   </div>
                   <div className="info_tags">
                     <Badge bg="#32c749" className="categoryBadge ml-2">
