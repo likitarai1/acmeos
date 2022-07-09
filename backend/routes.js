@@ -8,4 +8,5 @@ module.exports = function (app) {
   app.use('/note', require('./routes/note'));
   app.use('/bookmark', require('./routes/bookmark'));
   app.use('/inprogress', require('./routes/inprogress'));
+  app.use('/profile', require('./routes/profile'));
 };

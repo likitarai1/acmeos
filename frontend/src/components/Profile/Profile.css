@@ -45,3 +45,12 @@
     overflow-x: scroll;
   }
 }
+
+.avatar__2sMj{
+  max-width: 30%;
+}
+@media screen and (min-width: 576px) {
+  .avatar__2sMj {
+    max-width: 100%;
+  }
+}
