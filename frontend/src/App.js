@@ -37,14 +37,11 @@ function App() {
   };
 
   useEffect(() => {
-    console.log('your window local storage :: ', user);
     if (user) {
       setStatus(true);
       manipulateClass();
-      console.log('Here $tatu$ is ', status);
     } else {
       manipulateClass();
-      console.log('i am log out');
     }
   }, [status]);
 

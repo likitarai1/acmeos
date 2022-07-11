@@ -9,10 +9,6 @@ const Comments = ({ comments, vtype }) => {
 
   const { commentid, comment, votes } = comments;
 
-  console.log('props of comments ', comments);
-  // console.log(voteStatus);
-  console.log(vtype);
-
   useEffect(() => {
     if (vtype === null) {
       setUpvote('unset');
@@ -127,7 +123,6 @@ const Comments = ({ comments, vtype }) => {
       //Reverse the votetype
 
       options.votetype = !votetype;
-      console.log(options.votetype);
 
       patchVoteCountReq(options);
       window.location.reload();

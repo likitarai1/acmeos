@@ -62,7 +62,6 @@ const Contentpage = () => {
   const [completedChaptersArr, setCompletedChaptersArr] = useState([]);
 
   const getBookmarks = () => {
-    console.log('called me');
     axios
       .get('http://localhost:9000/bookmark', {
         params: {
@@ -70,9 +69,7 @@ const Contentpage = () => {
         },
       })
       .then((res) => {
-        console.log('ghgg >> ', res);
         localStorage.setItem('bookmarks', JSON.stringify(res.data.result));
-        // setBookmarks(res.data.result);
       })
       .catch((error) => {
         console.log('Axios doubt Error');
@@ -104,7 +101,6 @@ const Contentpage = () => {
         },
       })
       .then((res) => {
-        console.log('completedChapters >> ', res);
         localStorage.setItem('completedChapters', JSON.stringify(res.data.result));
         setCompletedChaptersArr(res.data.result);
       })
@@ -119,7 +115,6 @@ const Contentpage = () => {
       getBookmarks();
       getCompletedChaps();
     }
-    console.log("UNAME ",uname);
   }, []);
 
   if (uname === null) {

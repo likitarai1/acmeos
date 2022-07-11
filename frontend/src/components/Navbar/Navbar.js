@@ -20,7 +20,6 @@ const Navbar = () => {
   const handleLogout = () => {
     localStorage.removeItem('user');
     setStatus(false);
-    console.log('Logged out');
     window.location.href = '/';
   };
 
@@ -31,7 +30,6 @@ const Navbar = () => {
   useEffect(() => {
     if (localStorage.getItem('user')) {
       setStatus(true);
-      console.log('Here status is ', status);
     }
 
     if (window.innerWidth > 820) {
@@ -62,14 +60,12 @@ const Navbar = () => {
           <div className="sidenav">
             <div
               style={{
-                // paddingLeft: '25%',
                 height: '25%',
                 marginLeft: '5%',
                 marginRight: '5%',
               }}
             >
               <img src={acmeosLogo} alt="logo" style={{
-                // paddingLeft: '25%',
                 height: '68%',
                 marginLeft: '5%',
                 marginRight: '5%',
@@ -97,15 +93,6 @@ const Navbar = () => {
             ) : (
               <Link
                 to="/login"
-                // style={{
-                //   padding: '4px 22px',
-                //   borderRadius: '28px',
-                //   border: 'none',
-                //   background: '#3c2e55',
-                //   color: 'white',
-                //   margin: '11px 5px 0px 11px',
-                //   width: '12%',
-                // }}
               >
                 Login
               </Link>
@@ -115,18 +102,11 @@ const Navbar = () => {
             <Link to="/test">Test your learning</Link>
             <Link to="/doubt">Ask a doubt</Link>
             {localStorage.getItem('user') ? <Link to="/profile">Your Profile</Link> : ''}
-            <a href="#" className="icon" onClick={toggleMobileNav}>
+            <a href="#/" className="icon" onClick={toggleMobileNav}>
               <i className="fa fa-bars" style={{ color: '#3c2e55' }}></i>
             </a>
           </div>
         )}
-        {/* <div className="main">
-          <h2>Sidebar</h2>
-          <div>
-            <h2>Responsive Topnav Example</h2>
-            <p>Resize the browser window to see how it works.</p>
-          </div>
-        </div> */}
       </nav>
     </React.Fragment>
   );

@@ -301,7 +301,7 @@ const Chap3 = () => {
           </tbody>
         </table>
       </div>
-      <img src={fcfs} style={{ padding: '50px', width: '100%', height: '1%' }} />
+      <img alt='First Come First Serve' src={fcfs} style={{ padding: '50px', width: '100%', height: '1%' }} />
       <p>Average Waiting Time = 0+5+12+21/4 = 38/4 = 9.5 ms</p>
       <p>Average Turnaround Time = 6+13+22+33/4 =74/4 = 18.5 ms</p>
       <div className="terminal space shadow">
@@ -402,7 +402,7 @@ const Chap3 = () => {
           </tbody>
         </table>
       </div>
-      <img src={sjfnp} style={{ padding: '50px', width: '100%', height: '10%' }} />
+      <img alt='Shortest Job First Non Preemptive' src={sjfnp} style={{ padding: '50px', width: '100%', height: '10%' }} />
       <p>Average waiting time= 2+0+11+4/4 =4.25</p>
       <p>Average turnaround time=10+5+20+6/4 =10.25</p>
       <div className="terminal space shadow">
@@ -509,7 +509,7 @@ const Chap3 = () => {
         </table>
       </div>
       <p>The GANTT chart of preemptive shortest job first scheduling is:</p>
-      <img src={srt} style={{ padding: '50px', width: '100%', height: '5%' }} />
+      <img alt='Shortest Remaining Time' src={srt} style={{ padding: '50px', width: '100%', height: '5%' }} />
       <p>Average waiting time= 13+0+5+2/4 =20</p>
       <p>Average turnaround time= 31+4+12+4/4 =12.75</p>
       <div className="terminal space shadow">
@@ -603,7 +603,7 @@ const Chap3 = () => {
         </table>
       </div>
       <p>The GANTT chart of priority scheduling is:</p>
-      <img src={prio} style={{ padding: '50px', width: '100%', height: '10%' }} />
+      <img alt='Priority Scheduling' src={prio} style={{ padding: '50px', width: '100%', height: '10%' }} />
       <p>The average waiting time will be 0+3+24+26/4</p>
       <p>12.25ms</p>
       <p>
@@ -657,7 +657,7 @@ const Chap3 = () => {
         <li>Round robin is one of the oldest, fairest, and easiest algorithm.</li>
         <li> Widely used scheduling method in traditional OS.</li>
       </ul>
-      <img src={rr} style={{ padding: '50px', width: '100%', height: '500px' }} />
+      <img alt='Round Robin' src={rr} style={{ padding: '50px', width: '100%', height: '500px' }} />
       <h2>Let us now cover an example for the same:</h2>
       <p>Assume there are 5 processes with process ID and burst time given below</p>
       <div class="table-responsive-md">
@@ -698,7 +698,7 @@ const Chap3 = () => {
       <p>Now, we will calculate average waiting time for these processes to complete.</p>
       <h5>Solution –</h5>
       <p>We can represent execution of above processes using GANTT chart as shown below –</p>
-      <img src={rr1} style={{ padding: '50px', width: '100%', height: '10%' }} />
+      <img alt='Gantt Chart' src={rr1} style={{ padding: '50px', width: '100%', height: '10%' }} />
       <h5>Explanation:</h5>
       <p>
         – First p1 process is picked from the ready queue and executes for 2 per unit time (time

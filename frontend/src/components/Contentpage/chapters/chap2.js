@@ -29,7 +29,6 @@ const Chap2 = () => {
     } else {
       setSelected('fa fa-bookmark');
     }
-    console.log('what is in done? ', typeof done);
   }, []);
 
   const toggleSelected = () => {

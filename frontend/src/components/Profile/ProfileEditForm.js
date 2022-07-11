@@ -3,9 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import axios from 'axios';
-import './Profile.css';
 import Toast from 'react-bootstrap/Toast';
 import ToastContainer from 'react-bootstrap/ToastContainer';
+import './Profile.css';
 
 const ProfileEditForm = () => {
   const [profileData, setProfileData] = useState({ username: '', email: '', tags: '' });
@@ -28,7 +28,6 @@ const ProfileEditForm = () => {
 
   const fetchProfileInfo = () => {
     axios.get('http://localhost:9000/profile/', reqUserParam).then((res) => {
-      console.log(res);
       setProfileData(res.data.result[0]);
     });
   };
@@ -47,7 +46,6 @@ const ProfileEditForm = () => {
     axios
       .put('http://localhost:9000/profile/', data)
       .then((res) => {
-        console.log(res);
         setShow(true);
         setToasttilte('Success');
         setToastbg('success');
@@ -58,7 +56,6 @@ const ProfileEditForm = () => {
 
   useEffect(() => {
     fetchProfileInfo();
-    console.log('profile data', profileData);
   }, []);
 
   return (
@@ -99,7 +96,7 @@ const ProfileEditForm = () => {
           </Button>
         </Form>
         <ToastContainer className="p-3" position="top-end">
-          <Toast show={show}  bg={toastbg} onClose={() => setShow(false)} >
+          <Toast show={show} bg={toastbg} onClose={() => setShow(false)}>
             <Toast.Header>
               <strong className="me-auto">{toasttitle}</strong>
             </Toast.Header>

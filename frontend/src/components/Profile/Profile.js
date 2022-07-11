@@ -11,12 +11,12 @@ import Button from 'react-bootstrap/Button';
 import Modal from 'react-bootstrap/Modal';
 import Form from 'react-bootstrap/Form';
 import FloatingLabel from 'react-bootstrap/FloatingLabel';
-import './Profile.css';
 import CheckedList from './CheckedList';
 import SimpleList from './SimpleList';
 import CustomModal from '../CustomModal/CustomModal';
 import CustomAccordion from '../CustomAccordion/CustomAccordion';
 import profilePic from './../../images/profilepic.jpg';
+import './Profile.css';
 
 const Profile = () => {
   const [show, setShow] = useState(false);
@@ -29,9 +29,6 @@ const Profile = () => {
     bookmarks: [],
     inprogress: [],
   });
-  // const [notes, setNotes] = useState([]);
-  // const [doubts, setDoubts] = useState([]);
-  // const [bookmarks, setBookmarks] = useState([]);
 
   const handleClose = () => {
     setShow(false);
@@ -43,7 +40,6 @@ const Profile = () => {
 
   const addNote = (event) => {
     event.preventDefault();
-    console.log(event.target[0].value, event.target[1].value);
 
     let options = {
       username: uname.username,
@@ -54,57 +50,10 @@ const Profile = () => {
     axios.post('http://localhost:9000/note', options).then((response) => {
       console.log('>>', response);
     });
+
     handleClose();
     setTimeout(reload, 2000);
   };
-  // const getNote = () => {
-  //   axios
-  //     .get('http://localhost:9000/note', {
-  //       params: {
-  //         username: uname.username,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       console.log('', res.data.result);
-  //       setNotes(res.data.result);
-  //     })
-  //     .catch((error) => {
-  //       console.log('Axios note Error');
-  //       console.log(error);
-  //     });
-  // };
-  // const getDoubt = () => {
-  //   axios
-  //     .get('http://localhost:9000/doubt', {
-  //       params: {
-  //         username: uname.username,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       console.log('user doubts', res.data.result);
-  //       setDoubts(res.data.result);
-  //     })
-  //     .catch((error) => {
-  //       console.log('Axios doubt Error');
-  //       console.log(error);
-  //     });
-  // };
-  // const getBookmark = () => {
-  //   axios
-  //     .get('http://localhost:9000/bookmark', {
-  //       params: {
-  //         username: uname.username,
-  //       },
-  //     })
-  //     .then((res) => {
-  //       console.log('ghgg >> ', res);
-  //       setBookmarks(res.data.result);
-  //     })
-  //     .catch((error) => {
-  //       console.log('Axios doubt Error');
-  //       console.log(error);
-  //     });
-  // };
 
   const fetchProfileData = async () => {
     setLoading(true);
@@ -127,10 +76,6 @@ const Profile = () => {
       }),
     ]);
     setLoading(false);
-    console.log('notes', notes);
-    console.log('doubts', doubts);
-    console.log('bomk', bookmarks);
-    console.log('inprg', inprogress);
     setProfileData({
       notes: notes.data.result,
       doubts: doubts.data.result,
@@ -146,10 +91,6 @@ const Profile = () => {
     if (loading) {
       return <p>Data is loading...</p>;
     }
-    // getNote();
-    // // window.location.reload();
-    // getDoubt();
-    // getBookmark();
     fetchProfileData();
   }, []);
 
@@ -160,13 +101,11 @@ const Profile = () => {
           <Row>
             <Col xs={12} sm={2}>
               <div className="avatar text-center">
-                <a>
                   <img
                     className="avatar__2sMj img-fluid img-thumbnail rounded"
                     src={profilePic}
                     alt="your avatar"
                   />
-                </a>
               </div>
             </Col>
             <Col xs={12} sm={10}>
@@ -201,7 +140,6 @@ const Profile = () => {
       {/* Profile Tabs */}
 
       <Container className="mt-4 profileTabs">
-        {console.log('user data ', profileData)}
         <Tabs
           defaultActiveKey="inprogress"
           id="controlled-tab-example"
@@ -226,7 +164,6 @@ const Profile = () => {
           </Tab>
           <Tab eventKey="bookmarks" title="Bookmarks">
             <h3>Bookmarked Chapters</h3>
-            {console.log('bookma len', profileData)}
             {profileData.bookmarks.length === 0 ? (
               <h6>No Bookmarks</h6>
             ) : (

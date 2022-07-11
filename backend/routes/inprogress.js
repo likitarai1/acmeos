@@ -4,7 +4,6 @@ const db = require('./../connection');
 
 // Add chapter to inprogress db
 router.post('/', (req, res) => {
-  console.log('inprogress post endpoint', req.body);
   let data = {
     user: req.body.username,
     chapid: req.body.chapid,
@@ -17,7 +16,6 @@ router.post('/', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here errorr :: ', err);
       } else {
         res.status(201).send({ status: 'Chapter in progress' });
       }
@@ -30,7 +28,6 @@ router.get('/', (req, res) => {
   let data = {
     user: req.query.username,
   };
-  console.log(req.query.username);
   db.query(
     'SELECT inprogressid AS id, username, title, chapterid FROM inprogress LEFT JOIN chapters ON inprogress.chapid = chapters.chapterid WHERE inprogress.username=? AND status="inprogress"',
     [data.user],
@@ -39,9 +36,7 @@ router.get('/', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here errorr :: ', err);
       } else {
-        console.log('getinprogress result :: ', result);
         res.status(200).send({ result: result });
       }
     }
@@ -54,7 +49,6 @@ router.patch('/', (req, res) => {
     user: req.body.username,
     chapterid: req.body.chapid,
   };
-  console.log('What u hv in data', data);
   db.query(
     'UPDATE inprogress SET status="done" WHERE username=? AND chapid=?',
     [data.user, data.chapterid],
@@ -83,7 +77,6 @@ router.get('/completed', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here errorr :: ', err);
       } else {
         res.status(200).send({ result: result });
       }
@@ -98,7 +91,6 @@ router.delete('/:id', (req, res) => {
   db.query('DELETE FROM inprogress WHERE inprogressid=?', [id], (err, result) => {
     if (err) {
       res.status(500).send({ error: err || 'Something went wrong' });
-      console.log('inprogress delete err\n', err);
     } else {
       res.status(200).send({ status: 'Chapter removed from in progress list' });
     }

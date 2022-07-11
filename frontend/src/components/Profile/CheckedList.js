@@ -6,23 +6,18 @@ import ListGroup from 'react-bootstrap/ListGroup';
 const CheckedList = ({ list, feature }) => {
   const updateList = (id) => {
     if (feature === 'bookmark') {
-      console.log('Right!!!',id);
       axios
         .delete('http://localhost:9000/bookmark/' + `${id}`)
         .then((res) => {
-          console.log('response of bookmark delete ', res);
           alert('Bookmark removed');
           window.location.reload();
         })
-        .catch((err) => {
-          console.log('error in bookmark delete ', err);
-        });
+        .catch((err) => {});
     }
     if (feature === 'inprogress') {
       axios
         .delete('http://localhost:9000/inprogress/' + `${id}`)
         .then((res) => {
-          console.log('response of inprogress delete ', res);
           alert('Chapter not in progress anymore!!');
           window.location.reload();
         })
@@ -35,7 +30,6 @@ const CheckedList = ({ list, feature }) => {
   return (
     <>
       <ListGroup>
-        {console.log('data in list ?? ', list)}
         {list &&
           list.map((data, key) => {
             return (
@@ -52,23 +46,6 @@ const CheckedList = ({ list, feature }) => {
               </InputGroup>
             );
           })}
-
-        {/* <InputGroup>
-          <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          <ListGroup.Item className="list-text">
-            <a href="/" className="link-text">
-              Cras justo odio Cras justo odio Cras justo odio
-            </a>
-          </ListGroup.Item>
-        </InputGroup>
-        <InputGroup>
-          <InputGroup.Checkbox aria-label="Checkbox for following text input" />
-          <ListGroup.Item className="list-text">
-            <a href="/" className="link-text">
-              Cras justo odio Cras justo odio Cras justo odio
-            </a>
-          </ListGroup.Item>
-        </InputGroup> */}
       </ListGroup>
     </>
   );

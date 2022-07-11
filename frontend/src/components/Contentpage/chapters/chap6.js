@@ -128,7 +128,11 @@ const Chap6 = () => {
         <li>Contiguous memory management schemes</li>
         <li>Non-Contiguous memory management schemes</li>
       </ul>
-      <img src={flow} style={{ padding: '50px', width: '100%', height: '500px' }} />
+      <img
+        src={flow}
+        alt="Memory management scheme classification"
+        style={{ padding: '50px', width: '100%', height: '500px' }}
+      />
       <h4>Fragmentation</h4>
       <p>
         As processes are loaded and removed from memory, the free memory space is broken into little
@@ -153,7 +157,11 @@ const Chap6 = () => {
         The following diagram shows how fragmentation can cause waste of memory and a compaction
         technique can be used to create more free memory out of fragmented memory −
       </p>
-      <img src={f} style={{ padding: '50px', width: '100%', height: '400px' }} />
+      <img
+        src={f}
+        alt="Compaction technique"
+        style={{ padding: '50px', width: '100%', height: '400px' }}
+      />
       <p>
         External fragmentation can be reduced by compaction or shuffle memory contents to place all
         free memory together in one large block. To make compaction feasible, relocation should be
@@ -186,7 +194,7 @@ const Chap6 = () => {
         At the beginning of the process, all the frames remain empty so that all the pages of the
         processes will get stored in a contiguous way.
       </p>
-      <img src={mem} style={{ padding: '50px', width: '100%', height: '500px' }} />
+      <img src={mem} alt="Paging" style={{ padding: '50px', width: '100%', height: '500px' }} />
       <p>
         In this example you can see that A2 and A4 are moved to the waiting state after some time.
         Therefore, eight frames become empty, and so other pages can be loaded in that empty blocks.

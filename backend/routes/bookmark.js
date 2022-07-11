@@ -15,7 +15,6 @@ router.post('/', (req, res) => {
     (err, result) => {
       if (err) {
         res.status(500).send({ error: err || 'Something went wrong' });
-        console.log('bookmark post err ', err);
       } else {
         res.status(201).send({ status: 'Chapter bookmarked successfully' });
       }
@@ -35,9 +34,7 @@ router.get('/', (req, res) => {
     (err, result) => {
       if (err) {
         res.status(500).send({ error: err || 'Something went wrong' });
-        console.log('bookmark get err ', err);
       } else {
-        console.log('bookmarks::', result);
         res.status(200).send({ result });
       }
     }
@@ -56,14 +53,11 @@ router.get('/getid', (req, res) => {
     (err, result) => {
       if (err) {
         res.status(500).send({ error: err || 'Something went wrong' });
-        console.log('bookmarkid get err ', err);
       } else {
-        console.log('bookmarks::', result);
         res.status(200).send({ result });
       }
     }
   );
-  console.log(req.query);
 });
 
 // Delete bookmark
@@ -73,7 +67,6 @@ router.delete('/:id', (req, res) => {
   db.query('DELETE FROM bookmarks WHERE bookmarksid=?', [id], (err, result) => {
     if (err) {
       res.status(500).send({ error: err || 'Something went wrong' });
-      console.log('bookmark delete err\n', err);
     } else {
       res.status(200).send({ status: 'Bookmark removed' });
     }
