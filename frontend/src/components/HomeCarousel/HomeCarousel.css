@@ -6,39 +6,40 @@
 }
 
 .carousel-control-prev-icon {
-
-    background-image: url("./../../images/play.svg") !important;
-    transform: scaleX(-1);
-
+  background-image: url('./../../images/play.svg') !important;
+  transform: scaleX(-1);
 }
 
 .carousel-control-next-icon {
-
-    background-image: url("./../../images/play.svg") !important;
-
+  background-image: url('./../../images/play.svg') !important;
 }
 
 /* .carousel-caption{
   left: 5%;
 } */
 
-.seehowbtn{
+.seehowbtn {
   background-color: #6f5acd;
-    color: white;
-    width: 250px;
-    border-radius: 20px;
-    border: none;
-    padding: 8px 31px;
-    transition: transform .25s ease;
-    /* float: left; */
+  color: white;
+  width: 250px;
+  border-radius: 20px;
+  border: none;
+  padding: 8px 31px;
+  transition: transform 0.25s ease;
 }
 
-.seehowbtn > i{
+.seehowbtn > i {
   color: white;
   float: right;
   font-size: 24px;
 }
 
-.seehowbtn:hover{
-  transform: translate3d(0,-3px,0);
+.seehowbtn:hover {
+  transform: translate3d(0, -3px, 0);
+}
+
+@media screen and (max-width: 530px) {
+  .seehowbtn {
+    display: none;
+  }
 }

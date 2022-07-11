@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import Stack from 'react-bootstrap/Stack';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -9,7 +8,6 @@ import joinusImg from './../../images/joinus.png';
 import doubt from './../../images/doubt.svg';
 import terminal from './../../images/terminal.svg';
 import test from './../../images/test.svg';
-// import ju from './../../images/1.svg';
 import HomeButton from '../Button/HomeButton';
 import HomeCarousel from '../HomeCarousel/HomeCarousel';
 import './Homepage.css';
@@ -37,24 +35,22 @@ const Homepage = () => {
   ]);
   return (
     <Container className="p-0 mt-2 oflw" fluid>
-      <Row bg="#0d6efd" className="p-4 flex-column-reverse flex-md-row">
-        <Col md={1} style={{ width: '5%' }}></Col>
-        <Col md={6} className="textcol">
-          <Stack gap={3}>
-            <div className="tagline">
+      <Container className="landing-page">
+        <div className="content">
+          <div className="text-cont">
+            <h1 className="header">Learn in a fun way</h1>
+            <p className="description">
               Our vision is to teach you the invisible part of your instruments.
-            </div>
-            <div>
-              <a href="/chapters">
-                <HomeButton title="Learn More" />
-              </a>
-            </div>
-          </Stack>
-        </Col>
-        <Col md={5}>
-          <img className="mainImg" alt="Working on Desk" src={mainImg} />
-        </Col>
-      </Row>
+            </p>
+            <a href="/chapters">
+              <HomeButton title="Learn More" />
+            </a>
+          </div>
+          <div className="img-cont">
+            <img className="img" alt="Working on Desk" src={mainImg} />
+          </div>
+        </div>
+      </Container>
       <Row className="p-0 flex-md-row">
         <Col>
           <HomeCarousel />
@@ -77,41 +73,25 @@ const Homepage = () => {
                     </Card.Body>
                   </Card>
                 </a>
-                {/* <div className="card">
-                  <div className="imgBx">
-                    <img src="https://images.unsplash.com/photo-1642707949566-0c45f08faae2?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTY0MzQxODY0MA&ixlib=rb-1.2.1&q=85" />
-                  </div>
-                  <div className="content">
-                    <h2>Card One</h2>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                      incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis
-                      nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-                    </p>
-                  </div>
-                </div> */}
               </Col>
             ))}
           </Row>
         </div>
       </Row>
-      <Row bg="#0d6efd" className="p-4 flex-column-reverse flex-md-row">
-        <Col md={1} style={{ width: '5%' }}></Col>
-        <Col md={5}>
-          <img className="mainImg" alt="Working on Desk" src={joinusImg} />
-        </Col>
-        <Col md={6} className="textcol">
-          <Stack gap={3} className="joinUsSpacing">
-            <div className="heading joinus">Join Us</div>
-            <div className="taglineText">Be a part of this incredible community</div>
-            <div>
-              <a href="/login">
-                <HomeButton title="Join Us Now" />
-              </a>
-            </div>
-          </Stack>
-        </Col>
-      </Row>
+      <Container className="landing-page">
+        <div className="content">
+          <div className="text-cont">
+            <h1 className="header">Join Us</h1>
+            <p className="description">Be a part of this incredible community.</p>
+            <a href="/login">
+              <HomeButton title="Join Us Now" />
+            </a>
+          </div>
+          <div className="img-cont">
+            <img className="img" alt="Cheering Girl" src={joinusImg} />
+          </div>
+        </div>
+      </Container>
     </Container>
   );
 };

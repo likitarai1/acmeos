@@ -29,11 +29,6 @@ const Chap8 = () => {
       setSelected('fa fa-bookmark');
     }
   }, []);
-  console.log('??', uname);
-  // console.log(
-  //   'see if chap bookmarked',
-  //   JSON.parse(localStorage.getItem('bookmarks')).find((chap) => chap.chapterid === id)
-  // );
 
   const getBookmarkID = () => {
     //getbookmarkid
@@ -45,11 +40,9 @@ const Chap8 = () => {
         },
       })
       .then((res) => {
-        console.log('ghgg >> ', res);
         let addbookmark = JSON.parse(localStorage.getItem('bookmarks'));
         addbookmark.push(res.data.result[0]);
         localStorage.setItem('bookmarks', JSON.stringify(addbookmark));
-        // setBookmarks(res.data.result);
       })
       .catch((error) => {
         console.log('Axios Error ', error);
@@ -70,7 +63,6 @@ const Chap8 = () => {
       axios
         .delete('http://localhost:9000/bookmark/' + `${bookmarked.bookmarksid}`)
         .then((res) => {
-          console.log('bookmark dlt response', res);
           let bomks = JSON.parse(localStorage.getItem('bookmarks'));
           bomks.pop(); // As newly added bookmark would be at the end of array
           localStorage.setItem('bookmarks', JSON.stringify(bomks));
@@ -85,7 +77,6 @@ const Chap8 = () => {
       axios
         .post('http://localhost:9000/bookmark', options)
         .then((res) => {
-          console.log('add bookmark', res);
           getBookmarkID();
         })
         .catch((error) => {
@@ -120,7 +111,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -207,7 +198,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -306,7 +297,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -357,7 +348,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -388,7 +379,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -439,7 +430,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -482,7 +473,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>
@@ -597,7 +588,7 @@ const Chap8 = () => {
           <thead>
             <tr>
               <th>Sr. No.</th>
-              <th>Command & Description</th>
+              <th>Command &amp; Description</th>
             </tr>
           </thead>
           <tbody>

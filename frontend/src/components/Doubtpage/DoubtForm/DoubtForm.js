@@ -24,11 +24,6 @@ const DoubtForm = () => {
   };
 
   const handleSubmit = () => {
-    console.log('your title >> ', title);
-    console.log('doubt : ', doubt);
-    console.log('tags >> ', tagstring);
-    console.log('doubt date >> ', typeof dateInput);
-
     axios
       .post('http://localhost:9000/doubt/ask', {
         title: title,
@@ -38,7 +33,6 @@ const DoubtForm = () => {
         uname: uname.username,
       })
       .then((res) => {
-        console.log('doubt response :: ', res);
         alert('Doubt Submitted Successfully');
         clearInput();
       });

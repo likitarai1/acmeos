@@ -106,6 +106,7 @@ const Chap4 = () => {
       <center>
         <img
           src={procesyn}
+          alt='Process Synchronization'
           style={{ padding: "50px", width: "80%", height: "10%" }}
         />
       </center>
@@ -165,6 +166,7 @@ const Chap4 = () => {
       <center>
         <img
           src={semaphore}
+          alt='Semaphore'
           style={{ padding: "50px", width: "80%", height: "10%" }}
         />
       </center>
@@ -180,6 +182,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet1}
+          alt='Wait function'
           style={{ padding: "50px", width: "45%", height: "10%" }}
         />
       </center>
@@ -188,6 +191,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet2}
+          alt='Signal function'
           style={{ padding: "50px", width: "38%", height: "10%" }}
         />
       </center>
@@ -198,6 +202,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet3}
+          alt='Dining Philosopher'
           style={{ padding: "50px", width: "50%", height: "10%" }}
         />
       </center>
@@ -269,6 +274,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet4}
+          alt='Producer process'
           style={{ padding: "50px", width: "45%", height: "10%" }}
         />
       </center>
@@ -297,6 +303,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet5}
+          alt='Consumer process'
           style={{ padding: "50px", width: "45%", height: "10%" }}
         />
       </center>
@@ -338,6 +345,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet6}
+          alt='Reader process'
           style={{ padding: "50px", width: "45%", height: "10%" }}
         />
       </center>
@@ -359,6 +367,7 @@ const Chap4 = () => {
       <center>
         <img
           src={snippet7}
+          alt='Writer process'
           style={{ padding: "50px", width: "45%", height: "10%" }}
         />
       </center>

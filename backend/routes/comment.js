@@ -4,7 +4,6 @@ const db = require('./../connection');
 
 // Add comment to db
 router.post('/add', (req, res) => {
-  // console.log(req.body);
   let data = {
     id: req.body.doubtid,
     user: req.body.user,
@@ -19,7 +18,6 @@ router.post('/add', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        // console.log('here err :: ', err);
       } else {
         res.status(201).send({ status: 'Comment added successfully' });
       }
@@ -39,10 +37,8 @@ router.get('/getallcomments/:doubtid', (req, res) => {
       res.status(500).send({
         error: err || 'Something went wrong.',
       });
-      console.log('here err :: ', err);
     } else {
       res.status(200).send({ result });
-      // console.log('comments in particular doubt', result);
     }
   });
 });
@@ -53,9 +49,6 @@ router.get('/userVoted', (req, res) => {
     uname: req.query.username,
     doubtid: req.query.doubtid,
   };
-
-  // console.clear();
-  console.log('votedbnb :: ', req.query);
   db.query(
     'SELECT * FROM votes HAVING votes.commentid IN (SELECT c.commentid FROM commenttbl AS c WHERE c.doubtid=?) AND votes.username=?',
     [data.doubtid, data.uname],
@@ -64,10 +57,8 @@ router.get('/userVoted', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here err :: ', err);
       } else {
         res.status(200).send({ result });
-        console.log('user voted comments', result);
       }
     }
   );
@@ -90,7 +81,6 @@ router.patch('/voteCount', (req, res) => {
       res.status(500).send({
         error: err || 'Something went wrong.',
       });
-      console.log('here err :: ', err);
     } else {
       res.status(200).send({ status: 'OK' });
     }

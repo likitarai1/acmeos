@@ -57,17 +57,14 @@ app.post('/register', (req, res) => {
             if (err) {
               res.send({ message: 'Same username exists' });
             } else {
-              console.log(result);
-              console.log('email: ', email);
-              console.log('name: ', username);
-              res.send({ message: "Account created successfully" });
+              res.send({ message: 'Account created successfully' });
             }
           }
         );
       }
     });
   } else {
-    console.log("Passwords doesn't match correct it");
+    res.send({ message: "Passwords doesn't match correct it" });
   }
 });
 
@@ -79,16 +76,11 @@ app.post('/login', (req, res) => {
     if (err) {
       res.send({ err: err });
     }
-    console.log('login result ', result.length);
 
     if (result.length > 0) {
-      console.log('$$$ ', result[0]);
       bcrypt.compare(pass, result[0].pass, (err, response) => {
         if (response) {
           req.session.user = result[0].username;
-          console.log('%%%>>>>>>>', req.session.user);
-
-          // console.log(result);
           res
             .status(200)
             .send({ msg: 'successfully logged in', userdata: { username: req.session.user } });

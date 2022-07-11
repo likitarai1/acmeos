@@ -5,7 +5,6 @@ class Content {
     static uname = localStorage.getItem('user') ? JSON.parse(localStorage.getItem('user')) : null;
 
     static getBookmarkID(ID){
-      console.log("Hello from me",this.uname);
         //getbookmarkid
         axios
           .get('http://localhost:9000/bookmark/getid', {
@@ -29,7 +28,6 @@ class Content {
         username: this.uname.username,
         chapid: ID
       }
-      console.log("OPTIONS ",this.uname);
       axios
           .patch('http://localhost:9000/inprogress/', options)
           .then((res) => {

@@ -21,7 +21,6 @@ const Commentpage = () => {
 
   const getDoubts = () => {
     axios.get('http://localhost:9000/doubt/getdoubt/' + `${doubtid}`).then((res) => {
-      // console.log('cpage  >> ', res.data.result);
       setDoubt(res.data.result);
     });
   };
@@ -30,7 +29,6 @@ const Commentpage = () => {
     axios
       .get('http://localhost:9000/comment/getallcomments/' + `${doubtid}`)
       .then((res) => {
-        // console.log('comments  ', res.data.result);
         setComments(res.data.result);
       })
       .catch((error) => {
@@ -52,7 +50,6 @@ const Commentpage = () => {
         },
       })
       .then((res) => {
-        // console.log('voted  ', res.data.result);
         setVoted(res.data.result);
       })
       .catch((error) => {
@@ -80,7 +77,6 @@ const Commentpage = () => {
     axios
       .post('http://localhost:9000/comment/add', options)
       .then((res) => {
-        console.log('response >> ', res);
         alert('comment added successfully');
         clearInput();
       })
@@ -119,7 +115,7 @@ const Commentpage = () => {
       >
         <Card.Body className="p-2" style={{ marginTop: '12px' }}>
           <Row>
-            <Col xs={10}>
+            <Col xs={12} sm={10}>
               <Form.Control
                 type="text"
                 name="title"
@@ -129,8 +125,8 @@ const Commentpage = () => {
                 required
               />
             </Col>
-            <Col xs={1}></Col>
-            <Col xs={1}>
+            <Col xs={12} sm={1}></Col>
+            <Col xs={12} sm={1}>
               <Button variant="primary" type="submit" className="askbtn">
                 Comment
               </Button>

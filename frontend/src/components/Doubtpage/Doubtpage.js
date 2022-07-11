@@ -13,7 +13,6 @@ const Doubtpage = () => {
   useEffect(() => {
     const getDoubts = async () => {
       const response = await axios.get('http://localhost:9000/doubt/getdoubt');
-      console.log('hegfmd >> ', response);
       setDoubtData(response.data.result);
     };
     getDoubts();

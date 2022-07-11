@@ -17,7 +17,6 @@ router.post('/addvote', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here err :: ', err);
       } else {
         res.status(201).send({ status: 'Thanks for voting!!' });
       }
@@ -40,7 +39,6 @@ router.patch('/votetype', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here err :: ', err);
       } else {
         res.status(200).send({ status: 'votetype updated' });
       }
@@ -54,7 +52,6 @@ router.delete('/voteentry', (req, res) => {
     user: req.body.username,
     commentid: req.body.commentid,
   };
-  console.log('fhdh ', req.body);
   db.query(
     'DELETE FROM votes WHERE username=? AND commentid=?',
     [data.user, data.commentid],
@@ -63,9 +60,7 @@ router.delete('/voteentry', (req, res) => {
         res.status(500).send({
           error: err || 'Something went wrong.',
         });
-        console.log('here err :: ', err);
       } else {
-        console.log('here from voteentry :: ', result);
         res.status(200).send({ status: 'deleted from votes' });
       }
     }

@@ -5,9 +5,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 
 const DoubtCard = ({ data }) => {
-  console.log('here in card ', data);
   const tags = data.tags.split(',');
-  console.log('tags :: ', tags);
   const url = '/comment?doubtnum=' + `${data.doubtid}`;
   return (
     <Card>
